@@ -40,12 +40,40 @@ API Mock (JSON Server)
 Dados dos atendimentos
 ```
 
-### Próximas etapas
+### Task 02 — Requisição com Fetch
 
-As próximas tasks irão adicionar novas funcionalidades ao projeto, como:
+Nesta etapa foi criada e aprimorada a função responsável por buscar os atendimentos através do Fetch.
 
-* Exibição dos atendimentos na interface;
-* Consulta de um atendimento específico;
-* Estado de carregamento;
-* Tratamento de erros;
-* Validação dos dados com Zod.
+A função `buscarAtendimentos()` realiza uma requisição `GET` para a API simulada:
+
+`http://localhost:3000/atendimentos`
+
+Após receber a resposta, a aplicação verifica se a requisição foi realizada corretamente através de `response.ok`.
+
+Caso a resposta não seja bem-sucedida, um erro é gerado e tratado através de `try/catch`.
+
+Os dados retornados pela API são convertidos de JSON para dados utilizáveis pela aplicação através de `response.json()`.
+
+#### Fluxo da requisição
+
+```text
+Aplicação
+    ↓
+buscarAtendimentos()
+    ↓
+Fetch
+    ↓
+API Mock
+    ↓
+Resposta HTTP
+    ↓
+Verificação de response.ok
+    ↓
+ ┌──────────────┐
+ │              │
+Sucesso       Erro
+ │              │
+ ↓              ↓
+JSON          catch
+ ↓              ↓
+Dados         Tratamento
