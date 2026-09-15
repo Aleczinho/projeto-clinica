@@ -1,3 +1,4 @@
+import { atendimentoSchema } from "../types/atendimento.js";
 export async function buscarAtendimentos() {
     try {
     const resposta = await fetch(
@@ -8,7 +9,9 @@ export async function buscarAtendimentos() {
     }
 
     const dados = await resposta.json();
-    return dados;
+    const dadosValidados = atendimentoSchema.array().parse(dados);
+
+    return dadosValidados;
 
 } catch (erro) { 
     console.error("Não foi possível buscar os atendimentos:", erro);

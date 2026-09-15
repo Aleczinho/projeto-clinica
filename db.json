@@ -1,22 +1,25 @@
 {
   "atendimentos": [
-    {
-      "id": 1,
-      "paciente": "João Silva",
-      "tipo": "Consulta",
-      "data": "2026-09-14"
-    },
-    {
-      "id": 2,
-      "paciente": "Maria Santos",
-      "tipo": "Retorno",
-      "data": "2026-09-14"
-    },
-    {
-      "id": 3,
-      "paciente": "Pedro Oliveira",
-      "tipo": "Exame",
-      "data": "2026-09-15"
-    }
-  ]
+  {
+    "id": 1,
+    "nomePaciente": "João Silva",
+    "tipoAtendimento": "Consulta",
+    "data": "2026-09-14",
+    "status": "Agendado"
+  },
+  {
+    "id": 2,
+    "nomePaciente": "Maria Santos",
+    "tipoAtendimento": "Retorno",
+    "data": "2026-09-14",
+    "status": "Concluído"
+  },
+  {
+    "id": 3,
+    "nomePaciente": "Pedro Oliveira",
+    "tipoAtendimento": "Exame",
+    "data": "2026-09-15",
+    "status": "Agendado"
+  }
+]
 }
